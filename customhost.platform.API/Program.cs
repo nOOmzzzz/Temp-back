@@ -198,12 +198,11 @@ else
     app.UseCors("AllowFrontendPolicy"); // Restricted to frontend origins
 }
 
-if (!app.Environment.IsDevelopment())
+// Aplica redirección HTTPS solo en desarrollo
+if (app.Environment.IsDevelopment())
 {
-    app.UseHttpsRedirection(); 
+    app.UseHttpsRedirection();
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
