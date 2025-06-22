@@ -16,7 +16,7 @@ COPY --from=build /app/publish .
 
 # Configuración de puerto
 ENV PORT=8080  
-ENV ASPNETCORE_URLS=http://*:${PORT}
+ENV ASPNETCORE_URLS=http://*:$PORT
 EXPOSE $PORT 
 
 ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
