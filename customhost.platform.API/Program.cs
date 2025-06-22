@@ -182,11 +182,9 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Habilitar Swagger en todos los entornos
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Apply CORS Policy - Use specific frontend policy in production
 if (app.Environment.IsDevelopment())
